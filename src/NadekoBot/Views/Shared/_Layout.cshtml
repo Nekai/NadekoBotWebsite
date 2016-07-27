@@ -1,14 +1,34 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <!-- meta -->
     <meta charset="UTF-8" />
+    <title>NadekoBOT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="NadekoBOT is a multipurpose Discord bot with an extreme range of capabilities." />
-    <meta name="keywords" content="discrod, bot, nadeko, snake" />
-    <link rel="shortcut icon" href="http://nadekobot.xyz/wp-content/themes/betheme/images/favicon.ico" />
+    <meta name="description" content="NadekoBOT is a multifunctional Discord bot with an extreme range of capabilities." />
+    <meta name="keywords" content="discord, bot, nadeko, snake" />
 
-    <title>@ViewData["Title"] - NadekoBot</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
 
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/shortcodes.css">
+    <link rel="stylesheet" href="css/base.css">
+    <!--
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -19,117 +39,78 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+        -->
 </head>
 <body>
-    <header id="Header">
-        <!-- .header_placeholder 4sticky  -->
-        <div class="header_placeholder"></div>
-
-        <div id="Top_bar" class="loading">
-
-            <div class="container">
-                <div class="column one">
-
-                    <div class="top_bar_left clearfix">
-
-                        <!-- .logo -->
-                        <div class="logo">
-                            <a id="logo" href="http://nadekobot.xyz" title="Nadeko Control Panel"><img class="logo-main scale-with-grid" src="http://nadekobot.xyz/wp-content/uploads/2016/07/NadekoLogo08.png" alt="" /><img class="logo-sticky scale-with-grid" src="http://nadekobot.xyz/wp-content/uploads/2016/07/NadekoFavicon02.png" alt="" /><img class="logo-mobile scale-with-grid" src="http://nadekobot.xyz/wp-content/uploads/2016/07/NadekoLogo08.png" alt="" /></a>
-                        </div>
-
-                        <div class="menu_wrapper">
-                            <nav id="menu" class="menu-main-container">
-                                <ul id="menu-main" class="menu">
-                                    <li id="menu-item-142" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-4 current_page_item"><a href="http://nadekobot.xyz/"><span>Home</span></a></li>
-                                    <li id="menu-item-143" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://nadekobot.xyz/the-team/"><span>The Team</span></a></li>
-                                    <li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://nadekobot.xyz/commands-list/"><span>Commands List</span></a></li>
-                                    <li id="menu-item-281" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://nadekobot.xyz/faq/"><span>FAQ</span></a></li>
-                                    <li id="menu-item-138" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" href="https://discord.gg/6KCZWVb"><span>Nadeko&#8217;s Discord</span></a></li>
-                                    <li id="menu-item-288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-                                        <a href="http://nadekobot.xyz/guides/"><span>Hosting Guides</span></a>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-144" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://nadekobot.xyz/windows-guide/"><span>Windows Guide</span></a></li>
-                                            <li id="menu-item-145" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://nadekobot.xyz/linux-guide/"><span>Linux Guide</span></a></li>
-                                            <li id="menu-item-141" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://nadekobot.xyz/build-from-source/"><span>Build from Source</span></a></li>
-                                        </ul>
+    <div class="container">
+        <div class="logo">
+            <a href="/home">
+                <img class="img-responsive" src="images/logo.png" alt="NadekoBOT_logo" />
+            </a>
+        </div>
+        <!-- /.logo -->
+        <nav class="main-nav navbar navbar-default">
+            <div class="container-fluid row">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <img class="sticky-logo" src="images/logo_sticky.png" alt="NadekoBOT_logo" />
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="/home">Home</a>
+                            </li>
+                            <li>
+                                <a href="/team">The Team</a>
+                            </li>
+                            <li>
+                                <a href="/commandslist">Commands List</a>
+                            </li>
+                            <li>
+                                <a href="/faq">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="https://discord.gg/0ehQwTK2RBjAxzEY">Nadeko's Discord</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Hosting Guides
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/guides/windows">Windows Guide</a>
                                     </li>
-                                    <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://nadekobot.xyz/wp-admin"><span>Login</span></a></li>
+                                    <li>
+                                        <a href="/guides/linux">Linux Guide</a>
+                                    </li>
+                                    <li>
+                                        <a href="/guides/source">Build from Source</a>
+                                    </li>
+
                                 </ul>
-                            </nav><a class="responsive-menu-toggle " href="#"><i class="icon-menu"></i></a>
-                        </div>
-
-                        <div class="secondary_menu_wrapper">
-                            <!-- #secondary-menu -->
-                        </div>
-
-                        <div class="banner_wrapper">
-                        </div>
-
-                        <div class="search_wrapper">
-                            <!-- #searchform -->
-
-
-                            <form method="get" id="searchform" action="http://nadekobot.xyz/">
-
-
-                                <i class="icon_search icon-search"></i>
-                                <a href="#" class="icon_close"><i class="icon-cancel"></i></a>
-
-                                <input type="text" class="field" name="s" id="s" placeholder="Enter your search" />
-                                <input type="submit" class="submit" value="" style="display:none;" />
-
-                            </form>
-                        </div>
-
-                    </div>
-
-                    <div class="top_bar_right"><div class="top_bar_right_wrapper"><a id="search_button" href="#"><i class="icon-search"></i></a></div></div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2016 - NadekoBot</p>
-        </footer>
+                            </li>
+                            <li>
+                                <a href="/login">Login</a>
+                            </li>
+                        </ul>
+                        <!-- <a id="search_button" class="search-button" href="#"><i class="icon-search"></i></a> -->
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container -->
+            </div><!--/.container-fluid -->
+        </nav>
     </div>
-
-    <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
+    @RenderBody()
     @RenderSection("scripts", required: false)
-    <footer id="Footer" class="clearfix">
-        <div class="footer_copy">
-            <div class="container">
-                <div class="column one">
 
-
-                    <!-- Copyrights -->
-                    <div class="copyright">
-                        © Copyright by the Aurora Project and NadekoBot Team.
-                    </div>
-
-                    <ul class="social"></ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/site.js"></script>
 </body>
 
 </html>
