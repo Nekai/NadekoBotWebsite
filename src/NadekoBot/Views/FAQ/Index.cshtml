@@ -1,7 +1,58 @@
 ﻿@{
     ViewData["Title"] = "FAQ";
 }
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
-
-<p>Use this area to provide additional information.</p>
+@{
+    ViewData["Title"] = "FAQ";
+}
+<div class="container-fluid page-data">
+    <div class="container faq">
+        <div class="faq-header">
+            <i class="icon-help"></i>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default collapsed" data-toggle="collapse" data-parent="#accordion" href="#module-1">
+                <div class="faq-expand">
+                    <i class="icon-plus acc-icon-plus"></i>
+                    <i class="icon-minus acc-icon-minus"></i>
+                </div>
+                <div class="panel-heading">
+                    <h4 class="panel-title">How do I get @@Nadeko to join my server?</h4>
+                </div>
+                <div id="module-1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>Send her a Direct Message with -h to get the link. Only Server Owners can allow the bot to join.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default collapsed" data-toggle="collapse" data-parent="#accordion" href="#module-2">
+                <div class="faq-expand">
+                    <i class="icon-plus acc-icon-plus"></i>
+                    <i class="icon-minus acc-icon-minus"></i>
+                </div>
+                <div class="panel-heading">
+                    <h4 class="panel-title">I want to change permissions, but it doesn't work D:</h4>
+                </div>
+                <div id="module-2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>To change permissions, you have to set the ;permsrole (default permission role is called <code>Nadeko</code>, you can create a role named like that and assign it to yourself).<i>Only the owner of the server can change permissions without having this role.</i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default collapsed" data-toggle="collapse" data-parent="#accordion" href="#module-3">
+                <div class="faq-expand">
+                    <i class="icon-plus acc-icon-plus"></i>
+                    <i class="icon-minus acc-icon-minus"></i>
+                </div>
+                <div class="panel-heading">
+                    <h4 class="panel-title">Music doesn't work on a Mac?!</h4>
+                </div>
+                <div id="module-3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>You have to build <code>mono</code> from source. <a href="http://www.mono-project.com/docs/compiling-mono/mac/">http://www.mono-project.com/docs/compiling-mono/mac/</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
