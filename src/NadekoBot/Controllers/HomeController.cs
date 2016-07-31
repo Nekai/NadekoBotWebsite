@@ -5,20 +5,47 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Text.RegularExpressions;
+using Microsoft.Extensions.Caching.Memory;
+using System.Diagnostics;
+using Microsoft.Extensions.Logging;
 
 namespace NadekoBot.Controllers
 {
     public class HomeController : Controller
     {
-        public async Task<IActionResult> Index()
+        IMemoryCache _cache;
+        ILogger<HomeController> _logger;
+        Stopwatch sw;
+
+        public HomeController(
+            IMemoryCache cache,
+            ILogger<HomeController> logger)
         {
-            ViewData["server_count"] = await GetServerCount();
-            return View();
+            _logger = logger;
+            _cache = cache;
+            sw = new Stopwatch();
         }
 
+        public async Task<IActionResult> Index()
+        {
+            sw.Reset();
+            sw.Start();
+            object serverCount;
+            if (!_cache.TryGetValue("server_count", out serverCount))
+            {
+                serverCount = await GetServerCount();
+                _cache.Set("server_count", serverCount,
+                    new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(1)));
+            }
+            sw.Stop();
+            _logger.LogInformation($"Home response time {sw.Elapsed.TotalSeconds}");
+            return View((object)serverCount);
+        }
+        //TODO: Change this to get the data directly from the bot
         private async Task<string> GetServerCount()
         {
-            using (var http = new HttpClient()) {
+            using (var http = new HttpClient())
+            {
                 var res = await http.GetAsync("https://www.carbonitex.net/discord/bots");
                 var str = await res.Content.ReadAsStringAsync();
                 var m = Regex.Match(str, @"test=\\""(?<count>\d*)\\"" name=\\""Nadeko\\""");
