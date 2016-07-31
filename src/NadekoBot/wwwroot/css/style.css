@@ -1,3 +1,11 @@
+/* commandlist page */
+
+td {
+    text-align:left !important;
+}
+
+/* other stuff */
+
 *::selection {
   background: #ff8da1; /* WebKit/Blink Browsers */
 }
