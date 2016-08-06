@@ -15,7 +15,6 @@ namespace NadekoBot.Controllers
     {
         IMemoryCache _cache;
         ILogger<HomeController> _logger;
-        Stopwatch sw;
 
         public HomeController(
             IMemoryCache cache,
@@ -23,13 +22,13 @@ namespace NadekoBot.Controllers
         {
             _logger = logger;
             _cache = cache;
-            sw = new Stopwatch();
         }
 
         public async Task<IActionResult> Index()
         {
-            sw.Reset();
+            var sw = new Stopwatch();
             sw.Start();
+
             object serverCount;
             if (!_cache.TryGetValue("server_count", out serverCount))
             {
@@ -37,7 +36,9 @@ namespace NadekoBot.Controllers
                 _cache.Set("server_count", serverCount,
                     new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(1)));
             }
+
             sw.Stop();
+
             _logger.LogInformation($"Home response time {sw.Elapsed.TotalSeconds}");
             return View((object)serverCount);
         }
