@@ -14,7 +14,24 @@
             <div class="stat-wrap col-xs-12 col-sm-6">
                 <div class="separator"></div>
                 <h4>Used by</h4>
-                <div class="number">@Model</div>
+                <div class="number" id="server_count">@Model</div>
+                <script type="text/javascript">
+                    var elem = document.getElementById('server_count');
+                    var serverCount = +elem.innerHTML;
+                    elem.innerHTML = 0;
+                    var fps = 30;
+                    var totalSeconds = 1.25;
+                    var serversPerSecondPerFrame = serverCount / totalSeconds / fps;
+                    var i = 0;
+                    var intervalId = setInterval(() => {
+                        i = Math.round(i + serversPerSecondPerFrame);
+                        if (i >= serverCount) {
+                            i = serverCount;
+                            clearInterval(intervalId);
+                        }
+                        elem.innerHTML = i.toString();
+                    }, 1000/fps);
+                </script>
                 <h3>Servers</h3>
                 <div class="separator"></div>
                 <button class="pink-button">
