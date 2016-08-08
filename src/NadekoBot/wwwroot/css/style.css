@@ -100,7 +100,7 @@ code {
 .main-nav li a {
     border-color:white;
 }
-.main-nav li:hover a, .main-nav li:hover> {
+.main-nav li:hover a {
     border-bottom: 4px solid;
     border-color: #ffBdC1;
     color: #ff9db1 !important;
@@ -126,7 +126,7 @@ code {
 }
 .main-nav li.dropdown:hover a {
     border-bottom: 0px;
-    color: #777 !important;
+    color: #777;
 }
 .main-nav li.dropdown .dropdown-menu li {
      border-bottom: 1px solid #e6e6e6;
