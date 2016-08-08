@@ -14,7 +14,6 @@ namespace NadekoBot
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
                 .UseUrls("http://*:80")
                 .UseStartup<Startup>()
                 .Build();

@@ -4,16 +4,39 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Caching.Memory;
+using System.Diagnostics;
 
 namespace NadekoBot.Controllers
 {
     public class CommandslistController : Controller
     {
+        private IMemoryCache _cache;
+        private ILogger<CommandslistController> _logger;
+
+        public CommandslistController(ILogger<CommandslistController> logger,
+            IMemoryCache cache)
+        {
+            _logger = logger;
+            _cache = cache;
+        }
         //TODO add caching
         public async Task<IActionResult> Index()
         {
-            var cmdlistHtml = await GetCommandListHtml();
-            return View((object)cmdlistHtml);
+            var sw = new Stopwatch();
+            object cmdlistHtml;
+            if (!_cache.TryGetValue("commandlist", out cmdlistHtml))
+            {
+                cmdlistHtml = await GetCommandListHtml();
+                _cache.Set("commandlist", cmdlistHtml, 
+                    new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(1)));
+            }
+
+            sw.Stop();
+
+            _logger.LogInformation($"Commandlist response time {sw.Elapsed.TotalSeconds}");
+            return View(cmdlistHtml);
         }
         //TODO get this from the actual bot instead of github dev branch
         private async Task<string> GetCommandListHtml()
