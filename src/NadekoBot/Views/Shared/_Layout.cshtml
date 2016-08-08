@@ -63,18 +63,10 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <img class="sticky-logo" src="images/logo_sticky.png" alt="NadekoBOT_logo" />
                         <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href="/home">Home</a>
-                            </li>
-                            <li>
-                                <a href="/team">The Team</a>
-                            </li>
-                            <li>
-                                <a href="/commandslist">Commands List</a>
-                            </li>
-                            <li>
-                                <a href="/faq">FAQ</a>
-                            </li>
+                            <menulink controller-name="Home" action-name="Index" menu-text="Home"></menulink>
+                            <menulink controller-name="Team" action-name="Index" menu-text="The Team"></menulink>
+                            <menulink controller-name="Commandslist" action-name="Index" menu-text="Commands List"></menulink>
+                            <menulink controller-name="FAQ" action-name="Index" menu-text="FAQ"></menulink>
                             <li>
                                 <a target="_blank" href="https://discord.gg/0ehQwTK2RBjAxzEY">Nadeko's Discord</a>
                             </li>

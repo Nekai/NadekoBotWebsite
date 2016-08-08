@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using System;
 using System.Text;
 
-namespace CustomTagHelperSample.TagHelpers
+namespace TagHelpers
 {
     [HtmlTargetElement("menulink", Attributes = "controller-name, action-name, menu-text")]
     public class MenuLinkTagHelper : TagHelper
