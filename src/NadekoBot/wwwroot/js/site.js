@@ -1,18 +1,18 @@
 ﻿function stickyNav() {
-    if ($(window).width() > 900) {
-        if ($(this).scrollTop() > 370) {
-            $(".main-nav").addClass("navbar-fixed-top");
+    var doc = document.documentElement;
+    var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+
+    var elem = document.getElementById('main_nav');
+    if (window.innerWidth >= 768) {
+        if (top > 370) {
+            elem.classList.add('navbar-fixed-top');
         }
         else {
-            $(".main-nav").removeClass("navbar-fixed-top");
+            elem.classList.remove('navbar-fixed-top');
         }
     } else {
-        $(".main-nav").removeClass("navbar-fixed-top");
+        elem.classList.remove('navbar-fixed-top');
     }
 }
-$(window).resize(function () {
-    stickyNav();
-});
-$(document).scroll(function () {
-    stickyNav();
-});
+window.addEventListener("resize", stickyNav);
+document.addEventListener("scroll", stickyNav);
