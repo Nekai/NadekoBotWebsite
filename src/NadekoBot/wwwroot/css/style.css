@@ -258,7 +258,15 @@ code {
     margin-top: 90px;
     margin-bottom: 90px;
     cursor: pointer;
+    box-shadow: 0 0 120px #fff inset;
+    transition: box-shadow 0.5s ease;
 }
+
+    .section-wrap .stat-wrap .icon:hover {
+        color: white;
+        box-shadow: 0 0 120px #ff8da1 inset;
+        transition: color 0.15s ease;
+    }
 
 .section-wrap .icon {
     font-size: 50px;
@@ -268,15 +276,7 @@ code {
     border: 1px solid #ddd;
     border-radius: 50%;
     margin: 0 auto;
-    box-shadow: 0 0 120px #fff inset;
-    transition: box-shadow 0.5s ease;
 }
-
-    .section-wrap .icon:hover {
-        color: white;
-        box-shadow: 0 0 120px #ff8da1 inset;
-        transition: color 0.15s ease;
-    }
 
     .section-wrap .icon i {
         vertical-align: -webkit-baseline-middle;
