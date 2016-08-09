@@ -65,21 +65,11 @@
                         <ul class="nav navbar-nav">
                             <menulink controller-name="Home" action-name="Index" menu-text="Home"></menulink>
                             <menulink controller-name="Team" action-name="Index" menu-text="The Team"></menulink>
-                            <!--
-                            <menulink controller-name="Commandslist" action-name="Index" menu-text="Commands List"></menulink>
-                            <menulink controller-name="FAQ" action-name="Index" menu-text="FAQ"></menulink>
-                            -->
                             <li>
                                 <a href="/login">Login</a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://discordapp.com/oauth2/authorize?client_id=170254782546575360&scope=bot&permissions=66186303">Add to Server <i class="fa fa-external-link" aria-hidden="true"></i></a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://discord.gg/0ehQwTK2RBjAxzEY">Nadeko's Discord <i class="fa fa-external-link" aria-hidden="true"></i></a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="http://nadekobot.rtfd.io">Documentation <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                                <a target="_blank" href="https://discord.gg/0ehQwTK2RBjAxzEY">Discord Help Server <i class="fa fa-external-link" aria-hidden="true"></i></a>
                             </li>
                             <!-- <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -107,6 +97,12 @@
     </div>
     @RenderBody()
     @RenderSection("scripts", required: false)
+
+    <footer>
+        <div class="copyright">
+            © Copyright by the Aurora Project and NadekoBot Team.
+        </div>
+    </footer>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
