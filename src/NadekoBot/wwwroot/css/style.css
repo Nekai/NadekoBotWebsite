@@ -440,6 +440,11 @@ footer {
      margin-top: 40px;
 }
 
+.fa {
+    font-size:12px !important;
+    margin-left:2px;
+}
+
 /*BUTTONS*/
 .pink-button {
      border-radius: 6px;
