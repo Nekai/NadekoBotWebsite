@@ -26,8 +26,8 @@ body {
 }
 
 a, a:hover, a:active, a:focus {
-  outline:0;
-  color:inherit;
+    outline: 0;
+    color: inherit;
 }
 
 .clear {
@@ -257,7 +257,7 @@ code {
 .section-wrap .stat-wrap .icon {
     margin-top: 90px;
     margin-bottom: 90px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .section-wrap .icon {
@@ -271,11 +271,12 @@ code {
     box-shadow: 0 0 120px #fff inset;
     transition: box-shadow 0.5s ease;
 }
-.section-wrap .icon:hover {
-    color:white;
-    box-shadow: 0 0 120px #ff8da1 inset;
-    transition: color 0.15s ease;
-}
+
+    .section-wrap .icon:hover {
+        color: white;
+        box-shadow: 0 0 120px #ff8da1 inset;
+        transition: color 0.15s ease;
+    }
 
     .section-wrap .icon i {
         vertical-align: -webkit-baseline-middle;
@@ -552,18 +553,24 @@ footer {
     font-size: 16px;
     box-shadow: 0 0 120px #fff inset;
     transition: box-shadow 0.3s ease;
+    width: 230px;
+    display: inline-flex;
 }
 
     .pink-button i {
-        margin-right: 10px;
+        margin-left: -13px;
         font-size: 18px;
     }
 
     .pink-button:hover {
-        text-decoration:none;
+        text-decoration: none;
         box-shadow: 0 0 120px #ff8da1 inset;
-        color:white;
+        color: white;
         transition: color 0.15s ease;
+    }
+
+    .pink-button span {
+        margin: 0 auto;
     }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
