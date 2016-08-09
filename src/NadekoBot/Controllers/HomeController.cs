@@ -40,7 +40,7 @@ namespace NadekoBot.Controllers
             sw.Stop();
 
             _logger.LogInformation($"Home response time {sw.Elapsed.TotalSeconds}");
-            return View((object)serverCount);
+            return View("Home", serverCount);
         }
         //TODO: Change this to get the data directly from the bot
         private async Task<string> GetServerCount()
