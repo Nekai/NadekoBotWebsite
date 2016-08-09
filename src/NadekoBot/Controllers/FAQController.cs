@@ -10,7 +10,7 @@ namespace NadekoBot.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View("FAQ");
         }
     }
 }

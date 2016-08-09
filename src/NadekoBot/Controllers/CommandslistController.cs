@@ -36,7 +36,7 @@ namespace NadekoBot.Controllers
             sw.Stop();
 
             _logger.LogInformation($"Commandlist response time {sw.Elapsed.TotalSeconds}");
-            return View(cmdlistHtml);
+            return View("Commandslist",cmdlistHtml);
         }
         //TODO get this from the actual bot instead of github dev branch
         private async Task<string> GetCommandListHtml()
