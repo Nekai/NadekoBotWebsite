@@ -17,29 +17,42 @@
                 <div class="number" id="server_count">@Model</div>
                 <script type="text/javascript">
                     //todo Move to its own function, and to a file with all/any other scripts
-                    var elem = document.getElementById('server_count');
-                    var serverCount = +elem.innerHTML;
-                    elem.innerHTML = 0;
-                    var fps = 30;
-                    var totalSeconds = 1.25;
-                    var serversPerSecondPerFrame = serverCount / totalSeconds / fps;
-                    var i = 0;
-                    var intervalId = setInterval(() => {
-                        i = Math.round(i + serversPerSecondPerFrame);
-                        if (i >= serverCount) {
-                            i = serverCount;
-                            clearInterval(intervalId);
-                        }
-                        elem.innerHTML = i.toString();
-                    }, 1000/fps);
+                    (function () {
+                        var elem = document.getElementById('server_count');
+                        var serverCount = +elem.innerHTML;
+                        elem.innerHTML = 0;
+                        var fps = 30;
+                        var totalSeconds = 1.25;
+                        var serversPerSecondPerFrame = serverCount / totalSeconds / fps;
+                        var i = 0;
+                        var intervalId = setInterval(function () {
+                            i = Math.round(i + serversPerSecondPerFrame);
+                            if (i >= serverCount) {
+                                i = serverCount;
+                                clearInterval(intervalId);
+                            }
+                            elem.innerHTML = i.toString();
+                        }, 1000 / fps);
+                    })();
                 </script>
                 <h3>Servers</h3>
                 <div class="separator"></div>
                 <a class="pink-button" href="http://nadekobot.rtfd.io" target="_blank">
                     <i class="fa fa-book"></i>
-                    Documentation
+                    <span id="docs_text">Documentation</span>
                 </a>
                 <div class="separator"></div>
+                <script type="text/javascript">
+                    //todo Move to its of function/file
+                    (function () {
+                        var texts = ["Wiki", "Command List", "Hosting Guides", "Info", "Faq", "Documentation"]
+                        var docsElem = document.getElementById('docs_text');
+                        var i = 0;
+                        setInterval(function (elem) {
+                            docsElem.innerHTML = texts[i >= texts.length ? i = 0 : i++];
+                        }, 3000, docsElem);
+                    })();
+                </script>
             </div>
             <div class="stat-wrap col-xs-12 col-sm-6">
                 <div class="separator"></div>
