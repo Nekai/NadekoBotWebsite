@@ -192,7 +192,7 @@ code {
 /*PAGES*/
 .page-data {
     background: #fcfcfc;
-    padding-top: 40px;
+    padding: 40px 0px;
     color: #444;
 }
 
@@ -530,10 +530,9 @@ code {
 footer {
     background: #f2F1F5;
     color: #ff8dB1 !important;
-    text-align: center;
-    padding: 30px 0px;
+    text-align: left;
+    padding: 10px 20px;
     font-size: 13px;
-    margin-top: 40px;
 }
 
 .fa-external-link {
